@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    // Object.create(prototype, [descriptors])
+    // Object.create 方法可以以指定对象为原型创建新的对象，同时可以为新的对象设置属性, 并对属性进行描述
+    // - value : 指定值
+    // - writable : 标识当前属性值是否是可修改的, 默认为 false
+    // - configurable：标识当前属性是否可以被删除 默认为 false
+    // - enumerable：标识当前属性是否能用for in 枚举 默认为 false
+    // - get:   当获取当前属性时的回调函数
+    // - set:   当设置当前属性时
+
+    var car = {
+      name: '奔驰',
+      run() {
+        console.log('跑起来')
+      }
+    }
+    var bigCar = Object.create(car, {
+      color: {
+        // value:'red', // 设置默认值
+        // writable:false , // 不能被修改
+        configurable: true, // 不能被删除
+        enumerable: true, // 不能被枚举(遍历)
+      },
+      price: {
+        configurable: true, // 不能被删除
+        enumerable: true, // 不能被枚举(遍历)
+        // 不能有value和writable的设置,访问该属性的值的时候会自动的进来
+        get() {
+          return '2000'
+        },
+        set(val) {
+          console.log('此时价格为:'+val)
+        }
+      }
+    })
+    // bigCar.color='green'
+    // delete bigCar.color
+    // console.log(bigCar.color)
+    // // 遍历操作
+    // for(var key in bigCar){
+    //   console.log(key)
+    // }
+    // bigCar.price=1000
+    // console.log(bigCar.price)
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+      // 1. Array.prototype.indexOf(value):得到数组中的某个数据的第一个下标,用来找数据的
+      // 2. Array.prototype.lastIndexOf(value):得到数组中某个数据的最后一个小标
+      // 3. Array.prototype.forEach(function(item,index){}):遍历数组
+      // 4. Array.prototype.map(function(item,index){}):遍历数组,返回新数组
+      // 5. Array.prototype.filter(function(item,index){}):遍历数组,过滤后的数组
+
+
+    console.log([1, 2, 3, 4, 5].indexOf(10));
+    console.log([1, 2, 3, 4, 5].lastIndexOf(5));
+    [1, 2, 3, 4, 5].forEach(function (item, index) {
+      console.log(item, index)
+    });
+
+    console.log([1, 2, 3, 4, 5].map(function (item, index) {
+      return item * 2
+    }));
+    console.log([1,2,3,4,5,6].filter(function(item,index){
+      return item%2===0
+    }));
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <button id="btn">按钮</button>
+  <script type="text/javascript">
+    // 需求:点击按钮,1秒后变大
+    // document.getElementById('btn').addEventListener('click', function () {
+    //   var that = this
+    //   setTimeout(function () {
+    //     that.style.width = '200px'
+    //     that.style.height = '300px'
+    //   }, 1000);
+    // }, false);
+
+
+    // document.getElementById('btn').addEventListener('click', function () {
+    //   var that = this
+    //   setTimeout(() => {
+    //     that.style.width = '200px'
+    //     that.style.height = '300px'
+    //   }, 1000);
+    // }, false)
+
+    // 需求2,获取数组的偶数的数据
+    const result = [1, 2, 3, 4, 5].filter(function (item) {
+      if (item % 2 === 0) {
+        return true
+      } else {
+        return false
+      }
+    })
+    console.log(result)
+
+    console.log([1, 2, 3, 4, 5, 6, 7, 8].filter(v => v % 2 === 0))
+  </script>
+</body>
+
+</html>

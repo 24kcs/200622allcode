@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    // 严格模式
+    // 1. 全局声明
+    'use strict';
+
+    // 2. 函数内声明(IIFE)
+    // function f1(){
+    //   'use strict'
+    // }
+    // (function (){
+    //   'use strict'
+
+    // })()
+
+    // - 必须用 var 声明变量，不允许使用未声明的变量
+    // text = '今天天气很好'
+    // console.log(text)
+
+    // - 禁止自定义的函数中的 this 指向 window(严格模式下:this是undefined,混合模式下:this是window)
+    // (function(){
+    //   console.log(this) // undefined
+    // })()
+
+    // - 创建 eval 作用域 eval是函数,将参数字符串进行解析并执行
+    // alert('hello eval')
+    // eval('alert("hello eval")')
+    // 严格模式下eval作用域会报错
+    // eval("var num=100")
+    // console.log(num)
+
+
+    // - 对象不能有重名的属性（Chrome 已经修复了这个 Bug，IE 还会出现）
+    // var obj ={
+    //   name:'小明',
+    //   name:'小红'
+    // }
+    // console.log(obj)
+
+
+    // - 函数不能有重复的形参
+    // function f1(a,a){}
+    // f1()
+
+
+    // - 新增一些保留字, 如: implements interface private protected public
+    // var public='公开的'
+  </script>
+</body>
+
+</html>

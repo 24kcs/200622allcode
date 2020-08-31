@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 计算班级中的总成绩和平均成绩
+    var banJi = {
+      name: '0622',
+      scores: [
+        {
+          name: '凤姐',
+          score: 98
+        },
+        {
+          name: '纲手',
+          score: 97
+        },
+        {
+          name: '大蛇丸',
+          score: 90
+        },
+        {
+          name: '雏田',
+          score: 92
+        }
+      ]
+    }
+    Object.defineProperties(banJi, {
+      // 总成绩
+      totalScore: {
+        get: function () {
+          var total = 0
+          this.scores.forEach(function (value) {
+            total += value.score
+          })
+          return total
+        }
+      },
+      // 平均成绩
+      avgScore:{
+        get:function () {
+          return this.totalScore/this.scores.length
+        }
+      }
+    })
+    // 添加新的学员成绩
+    banJi.scores.push({
+      name:'佐助',
+      score:80
+    })
+    console.log(banJi.totalScore)
+    console.log(banJi.avgScore)
+  </script>
+</body>
+
+</html>

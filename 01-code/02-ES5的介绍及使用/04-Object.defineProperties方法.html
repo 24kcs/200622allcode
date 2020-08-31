@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    //   Object.defineProperties(object, descriptors)
+
+    // 直接在一个对象上定义新的属性或修改现有属性，并返回该对象。
+
+    // - object     要操作的对象
+    // - descriptors     属性描述
+    // - get  作为该属性的 getter 函数，如果没有 getter 则为undefined。函数返回值将被用作属性的值。
+    // - set  作为属性的 setter 函数，如果没有 setter 则为undefined。函数将仅接受参数赋值给该属性的新值。
+
+    var obj = {
+      name: '小明'
+    }
+    Object.defineProperties(obj, {
+      age: {
+        configurable: true,
+        enumerable: true,
+        get() {
+          return 20
+        },
+        set(val) {
+          console.log('当前的值为:' + val)
+        }
+      }
+    })
+    console.log(obj.age)
+  </script>
+</body>
+
+</html>
