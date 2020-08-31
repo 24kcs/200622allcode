@@ -11,51 +11,97 @@
 <body>
   <script type="text/javascript">
 
+    /*
+      变量:
+      函数:
+    
+      参数:
+      形参:
+      实参:
+    
+    
+    */
+
+
+
+
+    // 混合模式:书写js代码,你只管写(随便写)，剩下的交给浏览器
+    // var str = '床前明月光,强哥去开窗,遇到一耳光,牙齿掉光光'
+    // var str = '真香'
+    // console.log(str)
+
+
+    // 总结: JS的代码分为:混合模式和严格模式
+    // 如果js代码中出现了'use strict' 此时为严格模式
+    // 严格模式有两种: 全局声明,函数内声明
+
+
+
+
+
     // 严格模式
-    // 1. 全局声明
-    'use strict';
+    // 1. 全局声明:在script标签中最上面,整个的script标签内都是属于全局的严格模式
+    // 2. 函数声明:在函数中使用'use strict' 是函数内的严格模式
+
+    // 1. 全局的严格模式
+    'use strict'
 
     // 2. 函数内声明(IIFE)
     // function f1(){
+    //   // 函数内声明,函数内的严格模式
     //   'use strict'
+    //   console.log('哈哈,我又变帅了')
     // }
-    // (function (){
-    //   'use strict'
+    // f1()
 
-    // })()
+    // 3. 必须用 var 声明变量，不允许使用未声明的变量
+    // var str = '今天天气格外好,强哥来到桃花岛,看见老刘在洗澡'
+    // var str = '猥琐'
+    // console.log(str)
 
-    // - 必须用 var 声明变量，不允许使用未声明的变量
-    // text = '今天天气很好'
-    // console.log(text)
+
 
     // - 禁止自定义的函数中的 this 指向 window(严格模式下:this是undefined,混合模式下:this是window)
-    // (function(){
-    //   console.log(this) // undefined
-    // })()
+
+    // function f1(){
+    //   console.log(this)
+    // }
+    // f1()
+
 
     // - 创建 eval 作用域 eval是函数,将参数字符串进行解析并执行
-    // alert('hello eval')
-    // eval('alert("hello eval")')
+
     // 严格模式下eval作用域会报错
-    // eval("var num=100")
+    // eval('alert("哇塞,这也可以吗")')
+    // eval('var num=100')
     // console.log(num)
+
+
+
 
 
     // - 对象不能有重名的属性（Chrome 已经修复了这个 Bug，IE 还会出现）
     // var obj ={
-    //   name:'小明',
-    //   name:'小红'
+    //   age:10,
+    //   age:20
     // }
-    // console.log(obj)
+    // console.log(obj.age)
 
 
     // - 函数不能有重复的形参
-    // function f1(a,a){}
-    // f1()
+
+    // function f1(a, b, c, a) {
+    //   console.log(a, b, c, a)
+    // }
+    // f1(10, 20, 30, 40)
+
 
 
     // - 新增一些保留字, 如: implements interface private protected public
-    // var public='公开的'
+
+    // var public ='公共的'
+    // console.log(public)
+
   </script>
 </body>
 

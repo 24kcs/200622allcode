@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /*
+
+      JavaScript:简称:JS,
+      JS是一门脚本语言:遇到一行代码就执行一行代码,类似于CMD,SQL
+      JS是一门弱类型语言:声明变量都要用var
+      JS是一门解释型语言:不需要编译,遇到一行就解析一行,就执行一行
+      JS是一门动态类型的语言:变量中存储的值,只有在执行的时候才能确定当前的类型(对象中没有这个属性,点了,这个对象就有了这个属性)
+      JS是一门基于对象的语言:js本身不是面向对象的语言,而是基于对象的语言
+
+      面向过程:凡事亲力亲为,注重的是过程,每一步都是自己实现
+      面向对象:提出需求,找到对象,注重的是结果
+    
+      变量:用来存储数据的
+      数据类型
+      number string boolean undfined null object
+      var num=10
+      var str = '强哥'
+      var flag = true
+      var ss  undefined
+      var ss2=null
+      var obj = new Object()
+      函数:用来封装一段重复的代码,只需要在使用这端代码的时候,调用即可
+    
+      参数:函数在声明的时候,小括号中的变量,叫参数
+          函数在调用的时候,小括号里的值(变量),叫参数
+      形参:函数声明的时候定义的变量
+      实参:函数调用的时候传入的值
+
+      形参是用来接收实参的
+    
+
+      var num =10
+      var str = '您好'
+
+      string str = '真好'
+      int num =10
+    
+    
+    
+    */
+
+    // 面向过程的思想:
+    // 需求:饿了要吃饭
+    // function eat(){
+    //   console.log('炒菜')
+    //   console.log('切菜')
+    //   console.log('装盘')
+    //   console.log('装饭')
+    //   console.log('吃饭')
+    // }
+    // eat()
+
+    // 面向对象的思想:
+    // function Person(){
+    //   this.eat=function(){
+    //     console.log('炒菜')
+    //   console.log('切菜')
+    //   console.log('装盘')
+    //   console.log('装饭')
+    //   console.log('吃饭')
+    //   }
+    // }
+
+    // var per = new Person()
+    // per.eat()
+
+
+
+    // 面向过程:数组中的方法
+    // var arr = [10,20,30,40,50]
+    // for(var i=0;i<arr.length;i++){
+    //   console.log(arr[i])
+    // }
+    // console.log('=============')
+    // 面向对象
+    // console.log([10,20,30,40,50].forEach(v=>{console.log(v)}))
+
+    // var arr2 = [10,20,30,40,50]
+    // arr2.forEach(function(item,index){
+    //   console.log(item)
+    // })
+
+
+    // var num = 10
+    // var str = '强哥'
+    // console.log(typeof num)
+    // console.log(typeof str)
+
+
+    // 函数的声明
+    // function eat(str) {
+    //   console.log('早上要'+str)
+    //   console.log('中午要吃饭')
+    //   console.log('晚上要吃饭')
+    //   console.log('半夜要吃饭')
+    // }
+    // // 今天
+    // // 函数的调用
+    // eat('榴莲');
+
+
+    // // 明天
+    // eat('臭豆腐');
+
+    // // 后天
+    // eat('大蒜');
+
+
+    // function f1(str){}
+    // function f2(str,num){}
+    // function f3(str,num2){}
+    // function f4(str,age){}
+    // function f5(str){}
+    // f1('哈哈')
+    // f2(10)
+    // var flag = false
+    // f3(flag)
+
+
+
+    // 什么是对象? 看的见,摸得到,特指的某个东西.
+    // 特征: 姓名,年龄,升高,体重
+    // 行为: 吃,睡,玩,喝
+    // 对象:有特征和行为
+    // 对象:具有特征或者行为,特指的某个事物
+    // 特征--->属性
+    // 行为--->方法
+    // 创建对象,根据一个类别来创建的
+
+    // 写两遍---替换对象怎么写的
+    function Person(name,age,gender,weight,height){
+      // 属性
+      this.name = name
+      this.age=age
+      this.gender = gender
+      this.weight = weight
+      this.height = height
+      // 方法
+      this.eat=function(){
+        console.log('好吃')
+      }
+    }
+    // 实例化对象
+    var per = new Person('cls',32,'女', 55,165)
+    console.log(per.name)
+    per.eat()
+
+
+
+
+
+  
+
+  </script>
+</body>
+
+</html>
