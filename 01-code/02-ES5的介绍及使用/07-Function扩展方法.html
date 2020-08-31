@@ -14,44 +14,93 @@
     // - apply 方法调用一个具有给定 this 值的函数，以及作为一个数组（或类似数组对象）提供的参数
     // - bind 同 call 相似，不过该方法会返回一个新的函数，而不会立即执行
 
-    // function f1(num1, num2) {
-    //   console.log(this, num1, num2)
+    // function f1(a, b) {
+    //   console.log(this)
+    //   console.log(a + '====' + b)
     // }
-    // f1.call(null, 100, 200)
-    // f1.apply(null, [10, 20])
+    // 借用(其他对象没有这个方法,通过call可以借用其他的方法,同时也可以改变this的指向)
+    // var obj = {
+    //   name: '小明'
+    // }
+    // call---->传递的参数,是一个一个的传入进去的
+    // f1.call(null, 10, 20)
+    // f1.call(obj, 100, 200)
+    // apply--->传递的参数,是以数组的形式传入进去的
+    // f1.apply(null, [30, 40])
+    // f1.apply(obj,[300,400])
+    // 通过bind方法,相当于是把f1的函数复制了一份,给了返回值
     // var ff = f1.bind(null)
-    // ff(1000, 2000);
+    // ff(1000,2000)
+    // var ff = f1.bind(obj)
+    // ff(10, 20)
 
+    // 总结: apply和call和bind方法都可以改变this的指向,但是,apply和call在调用的时候,会直接执行
+    // bind 在调用的时候,需要接收,接收后的内容就是之前的函数(方法),再次调用才能够执行
 
+    // 应用场景call--->借用构造函数,实现继承
 
-    // 扩展方法---bind练习
-    // function f1(msg){
-    //   console.log(this,msg)
+    // function Person(name, age) {
+    //   this.name = name;
+    //   this.age = age;
     // }
-
-    // setTimeout(function(){
-    //   console.log(this,'真好')
-    // },500 );
-
-    // var obj ={
-    //   name:'小明'
+    // function Student(name, age) {
+    //   // 借用
+    //   Person.call(this, name, age)
     // }
-    // setTimeout(f1.bind(obj,'真好'),500 );
+    // var stu = new Student('小明', 20)
+    // console.log(stu.name)
+
+    // console.dir(Function)
+
+    // 总结: applye和call和bind都是Function的方法
+    // function f1(){
+    //   console.log('真好')
+    // }
+    // f1.call(null)
+
+    /*
+    面试题:必会技能
+    原型:是对象,两个原型对象
+    prototype:显示原型,浏览器的标准属性,程序员用的
+    __proto__:隐式原型,浏览器的非标准属性,浏览器用的
+    对象中必然有__proto__
+    函数中必然有prototype
+    函数也是对象,所以,函数中有__proto__,也有prototype
+    实例对象的__proto__指向的必然是所在的构造函数中的prototype
+    
+    
+    */
+   // 构造函数
+  //  function Person(){}
+  //  // 原型对象中添加了eat方法
+  //  Person.prototype.eat=function(){console.log('吃')}
+  //  Person.prototype.sayHi=function(){console.log('您好')}
+  //  var per = new Person()
+  //  // per对象的__proto__指向的是Person.prototype
+  //  console.log(per.__proto__===Person.prototype)
+  //  per.eat()
+  //  per.sayHi()
+
+  //  console.log('=========')
+  //  console.dir(Person)
+
+  //  function f1(){}
+  //  console.dir(f1)
+  //  console.log(f1.__proto__===Function.prototype)
+  //  f1.call()
+
+  /*
+
+   对象,属性,方法
+   对象和构造函数的关系
+   原型也是对象
+   对象----和---原型对象----和----构造函数
+   原型链
+
+  
+  */
 
 
-    // 扩展方法--call练习
-    // function Person(name,age){
-    //   this.name=name
-    //   this.age=age
-    // }
-    // Person.prototype.sayHi=function(){
-    //   console.log('您好')
-    // }
-    // function Student(name,age,gender){
-    //   Person.call(this,name,age)
-    // }
-    // var stu = new Student('小明',20,'女')
-    // console.log(stu)
 
 
 

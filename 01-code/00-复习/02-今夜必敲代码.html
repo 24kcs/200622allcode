@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 1. 变量的声明及获取当前变量的类型
+    var num1 = 10;
+    var str = '强哥好苦啊';
+    var flag = false;
+    var und;
+    var obj = new Object()
+    // 可以获取当前变量的类型---->typeOf关键字
+    console.log(typeof num1)
+    console.log(typeof str)
+    console.log(typeof flag)
+    console.log(typeof und)
+    console.log(typeof obj)
+    console.log(typeof (obj))
+    // 2. 函数的声明及调用(无返回,有返回值)
+    // add 函数中有两个形参
+    function add(a, b) {
+      // 函数内部,看到了return 则该函数有返回值
+      return a + b;;
+    }
+    // 函数的调用,传入两个实参
+    const result = add(10, 20);
+    console.log(result);
+    // 函数的声明
+    function showMsg(text) {
+      console.log(text);
+    }
+    // 函数的调用
+    showMsg('超哥好')
+    // 3. 对象的定义及初始化(创建对象)--->实例化一个老师对象
+    // 构造函数
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+    }
+    // 通过原型对象添加方法
+    Person.prototype.eat = function (text) {
+      console.log(text + ':' + this.name + '吃的真香')
+    }
+    // 实例化对象
+    var per = new Person('强哥', 20)
+    // 调用方法
+    per.eat('臭豆腐+榴莲+烤大蒜')
+
+
+  </script>
+</body>
+
+</html>
