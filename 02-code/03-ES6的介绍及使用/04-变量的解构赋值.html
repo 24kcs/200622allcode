@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 解构赋值
+    // 1. 理解:从对象或数组中提取数据,并赋值给变量(多个)
+    // 2. 对象的解构赋值: let {m,n}={n:'a',m:'b'}
+    // 3. 数组的解构赋值: let [a,b]=[10,'测试']
+    // 4. 用途: 给多个形参赋值
+    // 5. 注意:解构赋值对象的时候,写的变量名字一定是对象中存在的属性名字,想要什么属性就写什么属性
+
+    // 数组的解构赋值
+    // const arr = ['卡卡西', '佐助', '鸣人', '黑崎一护']
+    // const [name1, name2, name3, name4] = arr
+    // console.log(name1, name2, name3, name4)
+    // // 对象的解构赋值
+    // const obj = {
+    //   name: '雏田',
+    //   age: 20,
+    //   gender: '女',
+    //   sayHi: function () {
+    //     console.log('啊捏哈谁有')
+    //   }
+    // }
+    // const { name, age, gender, sayHi } = obj
+    // console.log(name, age, gender)
+    // sayHi()
+
+    // 复杂解构的解构
+    var product = {
+      name: '手机',
+      price: 2000,
+      saleAttr: {
+        saleAttrValue1: '白色',
+        saleAttrValue2: '黑色',
+        saleAttrValue3: '绿色',
+      },
+      imgList: [
+        {
+          name: '1.jpg',
+          url: '/src/static/1.jpg'
+        },
+        {
+          name: '2.jpg',
+          url: '/src/static/2.jpg'
+        }
+      ]
+    }
+
+    const { name, price, saleAttr: { saleAttrValue1, saleAttrValue2, saleAttrValue3 }, imgList: [img1, img2] } = product
+    console.log(name, price)
+    console.log(saleAttrValue1, saleAttrValue2, saleAttrValue3)
+    console.log(img1.name, img1.url)
+    console.log(img2.name, img2.url)
+
+  </script>
+</body>
+
+</html>

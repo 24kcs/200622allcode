@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 1秒后 控制台输出111, 然后2秒后输出222，然后3秒手输出333
+    // 回调地狱,代码可读性差,错误处理不方便
+    // setTimeout(() => {
+    //   console.log(111)
+    //   setTimeout(() => {
+    //     console.log(222)
+    //     setTimeout(() => {
+    //       console.log(333)
+    //     }, 3000);
+    //   }, 2000);
+    // }, 1000);
+    function f1() {
+      setTimeout(() => {
+        console.log(111)
+        iterator.next()
+      }, 1000);
+    }
+    function f2() {
+      setTimeout(() => {
+        console.log(222)
+        iterator.next()
+      }, 2000);
+    }
+    function f3() {
+      setTimeout(() => {
+        console.log(333)
+        iterator.next()
+      }, 3000);
+    }
+
+    function* gen() {
+      yield f1();
+      yield f2();
+      yield f3();
+      console.log('哇塞')
+    }
+    let iterator = gen()
+    iterator.next()
+  </script>
+</body>
+
+</html>

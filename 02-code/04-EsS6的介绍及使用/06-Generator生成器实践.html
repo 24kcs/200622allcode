@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 模拟登陆后才能看到商品数据,才能看到订单数据
+    function getLogin() {
+      setTimeout(() => {
+        const user = '用户信息'
+        iterator.next(user)
+      }, 1000);
+    }
+    function getProduct() {
+      setTimeout(() => {
+        const product = '商品数据'
+        iterator.next(product)
+      }, 1000);
+    }
+    function getOrder() {
+      setTimeout(() => {
+        const order = '订单信息'
+        iterator.next(order)
+      }, 1000);
+    }
+    function* gen() {
+      const login = yield getLogin();
+      console.log(login)
+      const product = yield getProduct();
+
+      console.log(product)
+      const order = yield getOrder();
+
+      console.log(order)
+    }
+    const iterator = gen()
+    iterator.next()
+  </script>
+</body>
+
+</html>

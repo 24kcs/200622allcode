@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+
+    // 总结: JS的代码分为:混合模式和严格模式
+    // 如果js代码中出现了'use strict' 此时为严格模式
+    // 严格模式有两种: 全局声明,函数内声明
+
+
+
+
+
+    // 严格模式
+    // 1. 全局声明:在script标签中最上面,整个的script标签内都是属于全局的严格模式
+    // 2. 函数声明:在函数中使用'use strict' 是函数内的严格模式
+
+    // 1. 全局的严格模式
+    'use strict'
+
+    // 2. 函数内声明(IIFE)
+    function f1(){
+      // 函数内声明,函数内的严格模式
+      'use strict'
+      console.log('哈哈,我又变帅了')
+    }
+    f1();
+
+    // 3. 必须用 var 声明变量，不允许使用未声明的变量
+    str = '今天天气格外好,强哥来到桃花岛,看见老刘在洗澡'
+    str = '猥琐'
+    console.log(str)
+
+
+
+    // 4. 禁止自定义的函数中的 this 指向 window(严格模式下:this是undefined,混合模式下:this是window)
+    function f1(){
+      console.log(this)
+    }
+    f1();
+
+
+    // 5. 创建 eval 作用域 eval是函数,将参数字符串进行解析并执行
+
+    // 严格模式下eval作用域会报错
+    eval('alert("哇塞,这也可以吗")')
+    eval('var num=100')
+    console.log(num)
+
+
+
+
+
+    // 6. 对象不能有重名的属性（Chrome 已经修复了这个 Bug，IE 还会出现）
+    var obj ={
+      age:10,
+      age:20
+    }
+    console.log(obj.age)
+
+
+    // 7. 函数不能有重复的形参
+
+    function f1(a, b, c, a) {
+      console.log(a, b, c, a)
+    }
+    f1(10, 20, 30, 40)
+
+    // 8. 新增一些保留字, 如: implements interface private protected public
+
+    var public ='公共的'
+    console.log(public)
+
+
+  </script>
+</body>
+
+</html>

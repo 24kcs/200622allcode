@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+  // next的参数
+    function* gen(args) {
+      console.log(args)
+      // yield 语句的返回值
+      let result1 = yield 'AAA';
+      // result1 就是第二个next方法调用的时候传入的参数
+      console.log(result1)
+      let result2 = yield 'BBB';
+      console.log(result2)
+      let result3 = yield 'CCC';
+      console.log(result3)
+    }
+    let iterator = gen(111)
+    console.log(iterator.next())
+    console.log(iterator.next(222))
+    console.log(iterator.next(333))
+    console.log(iterator.next(444))
+  </script>
+</body>
+
+</html>
