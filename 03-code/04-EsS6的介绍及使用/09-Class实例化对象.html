@@ -10,25 +10,132 @@
 
 <body>
   <script type="text/javascript">
-  // class
-  // 1. 通过class定义类/实现类的继承
-  // 2. 在类中通过constructor定义构造方法
-  // 3. 通过new 来创建类的实例
+    // class
+    // 1. 通过class定义类/实现类的继承
+    // 2. 在类中通过constructor定义构造方法
+    // 3. 通过new 来创建类的实例
 
-  // 定义个人类,并实例化对象
-  class Person{
-    // 构造器方法
-    constructor(name,age){
-      this.name=name;
-      this.age= age;
+    // 定义个人类,并实例化对象
+
+
+    // ES6 中可以直接通过class 定义 类 (代替了ES5中的构造函数)
+    class Person {
+      // 构造器函数---实例化对象的时候可以初始化属性
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      // 实例方法
+      eat() {
+        console.log('来人,给我来头蒜,还有大葱,还有臭豆腐,站着吃')
+      }
+
+      // 实例方法
+      run() {
+        console.log('跑着吃')
+      }
+      // 实例方法
+      sleep() {
+        console.log('睡着吃')
+      }
+      // 实例方法
+      sayHi() {
+        console.log('锄禾日当午,地雷埋下土,强哥走过去,炸成二百五');
+      }
     }
-    // 添加方法
-    eat(){
-      console.log(`${this.age}岁的${this.name}正在吃东西`)
+    var per = new Person('小强强', 18);
+    console.log(per.name, per.age);
+    per.eat();
+    per.run();
+    per.sleep();
+    per.sayHi();
+
+
+
+
+
+
+    // ES5中创建对象:new Object()/ 构造函数/ {}
+
+
+    // 方式1: 创建对象
+    // var obj = new Object()
+    // obj.name = '卡卡西';
+    // obj.age = 20;
+    // obj.sayHi=function(){
+    //   console.log('萨瓦迪卡');
+    // }
+
+    // console.log(obj.name,obj.age);
+    // obj.sayHi();
+
+
+    // 方式2 : 构造函数
+
+    // function Person(name, age) {
+    //   this.name = name;
+    //   this.age = age;
+    // }
+    // // 原型对象的方式添加方法
+    // Person.prototype.sayHi = function () {
+    //   console.log('啊捏哈涩呦');
+    // }
+    // var per = new Person('强哥', 20);
+    // per.sayHi();
+
+    // 方式3： {}
+
+    // var obj = {
+    //   name:'强哥',
+    //   age:18,
+    //   eat:function(){
+    //     console.log('红烧榴莲浇汁臭豆腐')
+    //   }
+    // }
+    // console.log(obj.name,obj.age)
+    // obj.eat();
+
+
+
+    console.log('================');
+
+    // 需求: 饿了 =======>找个人做饭,送过来=====>  吃饭
+    // 外卖小哥(做饭,送饭)
+    // 特征: 名字,电话,性别,年龄---->属性
+    // 行为: 做饭,送饭----->方法
+
+    // 类----外卖小哥的类别
+    class SellBrother {
+      // 构造器函数
+      constructor(name, phone, gender, age) {
+        // 属性
+        this.name = name;
+        this.phone = phone;
+        this.gender = gender;
+        this.age = age;
+      }
+
+      // 实例方法
+      cook() {
+        console.log('做个臭豆腐炒饭')
+      }
+      gaveFan() {
+        console.log('送饭来了,快接收,五星好评哦,亲~')
+      }
     }
-  }
-  const per = new Person('小明',20)
-  per.eat()
+
+    // 饿了
+    var ge = new SellBrother('小黄', '锤子电话', '男', 32);
+    console.log(ge.name,ge.age,ge.phone,ge.gender)
+    ge.cook();
+    ge.gaveFan();
+    console.log('真香')
+
+
+
+
+
+
 
   </script>
 </body>

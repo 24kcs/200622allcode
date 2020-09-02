@@ -20,26 +20,34 @@
     // 7. clear()
     // 8. size
 
-    // const map = new Map()
-    const map = new Map()
-    // 键和值可以是任意类型
-    // map.set('name', '强哥')
-    var obj ={};
-    // 键值的方式添加数据
-    map.set(obj, function(){console.log('真好')})
+   // key---value
+   // k ---- v
+   // 键----值
+    var m = new Map();
+    // 添加数据,以键值对的方式添加数据
+    m.set('name','强哥');
+    m.set('强哥','给钱');
+    m.set(10,function(){console.log('阿涅哈斯恶有')});
+    m.set({},100);
+    console.log(m);
+
+
     // 根据键获取值
-    // console.log(map.get(obj))
-    // 根据键进行删除
-    // map.delete('name')
-    // 根据键进行判断
-    // console.log(map.has('name'))
-    // 清空map
-    // map.clear()
-    // console.log(map.size)
-    // console.log(map)
-    for(var key of map){
-      console.log(key)
-    }
+    console.log( m.get('强哥'))
+    // 根据键删除数据
+    m.delete('强哥')
+
+    console.log(m.has('强哥'))
+    // 清空数据
+    m.clear()
+
+    console.log(m)
+    console.log(m.size);
+
+
+
+
+
   </script>
 </body>
 

@@ -10,29 +10,40 @@
 
 <body>
   <script type="text/javascript">
-    function Product(name, price) {
+    // ES5 中实现继承(借用构造函数实现继承和改变原型指向实现继承)
+    // 构造函数
+    function Person(name, age) {
       this.name = name;
-      this.price = price;
+      this.age = age;
     }
-    Product.prototype.getDesc = function () {
-      console.log('当前的商品价格为:' + this.price)
+    // 通过原型添加方法----实例对象来调用
+    Person.prototype.eat = function () {
+      console.log('吃饭了')
     }
+    // 构造函数
+    function Student(name, age, score, gender) {
+      // 通过借用构造函数的方式来实现继承---属性的阶乘
+      Person.call(this, name, age);
+      this.score = score;
+      this.gender = gender;
+    }
+   
+    // 通过原型添加方法----实例对象来调用
+    Student.prototype.sayHi = function () {
+      console.log('日照香炉生紫烟,要看强哥在林间,好似一个活神仙,其实是在荡秋千');
+    }
+     // 改变原型的指向实现了实例方法的继承
+     Student.prototype = new Person();
 
-    function Phone(name, price, color, weight) {
-      // 属性的继承
-      Product.call(this, name, price)
-      this.color = color;
-      this.weight = weight;
-    }
-    // 方法的继承
-    Phone.prototype = new Product()
-    Phone.prototype.getColor = function () {
-      console.log(`当前商品的颜色为:${this.color}`);
-    }
-    const phone = new Phone('小米', 2300, '绿色', '0.2kg')
-    console.log(phone);
-    phone.getDesc()
-    phone.getColor()
+    var stu = new Student('强哥', 20, 45, '女');
+    // 输出名字和年龄
+    console.log(stu.name, stu.age);
+    stu.sayHi();
+    stu.eat();
+
+    console.dir(Person)
+
+
   </script>
 </body>
 

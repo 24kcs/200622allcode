@@ -14,33 +14,36 @@
     // 5. 通过super调用父类的构造函数
     // 6. 重写从父类继承的一般方法
 
-    class Person {
-      constructor(name, color) {
+    // 类--人类
+    class Person{
+      constructor(name,age){
         this.name = name;
-        this.color = color;
+        this.age= age;
       }
-      eat() {
-        console.log(`${this.name} 正在吃 ${this.color} 的臭豆腐`);
-      }
-    }
-    class Student extends Person {
-      constructor(name, color, age) {
-        // 继承属性
-        super(name, color);
-        this.age = age
-      }
-      run() {
-        console.log('跑起来');
-      }
-      // 重写父级的方法
-      eat(){
-        console.log('我要吃鸡腿');
+      sayHi(){
+        console.log('您好啊,吃了没您!');
       }
     }
-    const stu  = new Student('强哥','黄色',20)
+
+    // 类---学生类
+    // Student 和Person发生了继承的关系
+    class Student extends Person{
+      constructor(name,age,score){
+        // super---相当于ES5中的Person.call()的写法
+        // 继承了人类中属性(实例属性)
+        super(name,age);
+        this.score= score;
+      }
+      sayHi(){
+        console.log('哦,又见面了')
+      }
+    }
+
+
+    const stu = new Student('强哥',20,39);
+    stu.sayHi();
     console.log(stu)
-    stu.eat();
-    stu.run();
+  
   </script>
 </body>
 

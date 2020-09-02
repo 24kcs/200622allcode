@@ -13,21 +13,55 @@
     // 静态成员是构造函数对象的(函数对象上的,直接通过  函数名字 点出来使用的 )
     // 静态成员不是通过实例对象调用的,而是通过类来调用的
     // ES5 实现静态成员
-    // function Person(){}
-    // Person.name='person';
-    // Person.eat=function(){
-    //   console.log('吃了')
+    // 构造函数
+    // function Person(age){
+    //   // age属性是当前的Person的实例对象的属性
+    //   this.age = age;
+    //   // 实例方法
+    //   this.eat=function(){
+    //     console.log('下雨了,还要吃')
+    //   }
     // }
-    // console.dir(Person)
-    // ES6 实现静态成员
-    class Person {
-      constructor() { }
-      static name = 'person'
-      static eat() {
-        console.log('吃了没')
+    // // 静态属性---通过Person来调用的
+    // Person.age = 100;
+    // // 静态方法---通过Person来调用的
+    // Person.run = function(){
+    //   console.log('快跑啊,下雨啦')
+    // }
+    // // per----->实例对象
+    // var per = new Person(20)
+    // console.log(per.age)
+    // console.log(Person.age)
+    // per.eat()
+    // Person.run();
+
+
+    // 实例对象调用的属性和方法---都属于实例对象的成员---->实例对象来调用
+    // 静态的属性和静态的方法----都属于静态成员-----类名来调用
+
+
+      // ES6 中添加静态成员---->把静态的属性和静态的方法 添加到类上--->最终类来调用
+
+      class Person{
+        // 不是一定要书写的
+        constructor(age){
+          this.age = age;
+        }
+        // 添加静态成员
+        // 添加静态的属性
+        static name = '人类';
+        static eat(){
+          console.log('人都要吃饭')
+        }
       }
-    }
-    console.dir(Person);
+      // 使用静态的成员
+      console.log(Person.name);
+      // 调用静态的方法
+      Person.eat();
+
+
+
+
 
 
   </script>

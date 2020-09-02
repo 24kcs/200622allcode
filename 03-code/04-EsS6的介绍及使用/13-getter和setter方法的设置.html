@@ -9,27 +9,39 @@
 <body>
   <script type="text/javascript">
   // getter和setter的设置
-  class Person{
-    // 实例对象的属性的 设置和获取 操作
-    get name(){
-      return this.n
-    }
-    set name(val){
-      this.n = val
-    }
-    // 静态属性的设置 和 获取  操作
-    static get color(){
-      return '黄色'
-    }
-    static set color(val){
-      console.log(val)
-    }
-  }
-  const p = new Person()
-  p.name = '小明';
-  console.log(p.name);
-  
-  console.log(Person.color)
+  //   class Person{
+
+  //     // 当前的这个name属性是使用get进行设置的,也就意味着,这个name属性外部通过实例对象仅仅是调用获取该属性的值而已
+
+  //     // 是外部获取该属性值的时候会进来
+  //     // 只有get,没有set---->外部只能读取属性值,不能设置属性值
+  //     get name(){
+  //       return this.mingzi
+  //     }
+  //     // 是外部设置属性值的时候会进来
+  //     set name(val){
+  //       // console.log('赋值了:'+val)
+  //       console.log('执行了')
+  //       this.mingzi=val
+  //     }
+  //   }
+
+
+
+  //   const per = new Person();
+  //  //  console.log(per.name)
+  //   per.name='强哥'
+  //   console.log(per.name)
+
+
+  // class Array{
+  //   get length(){
+  //     return 10
+  //   }
+  // }
+
+  // var arr = new Array()
+  // console.log(arr.length)
   </script>
 </body>
 </html>

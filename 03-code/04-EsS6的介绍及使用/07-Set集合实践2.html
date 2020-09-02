@@ -11,33 +11,38 @@
 <body>
   <script type="text/javascript">
     // 1. 数组去重
-    // const arr1 = ['卡卡西', '自来也', '大蛇丸', '卡卡西', '纲手'];
+
+    // const arr1 = ['强哥', '小强', '强强', '小强强', '强强', '小强'];
     // const arr2 = [...new Set(arr1)];
-    // console.log(arr2)
+    // console.log(arr2);
 
-   
+    // 2. 获取数组中相同的数据---交集操作
+    // var arr3 = [10, 20, 30, 40, 50];
+    // var arr4 = [40, 50, 60, 70];
+    // var arr5 = [...new Set(arr3)];
+    // var arr6 = arr5.filter(item => {
+    //   var s = new Set(arr4);
+    //   return s.has(item)
+    // });
+    // console.log(arr6);
+    // var arr5 = [...new Set(arr3)].filter(item => new Set(arr4).has(item));
+    // console.log(arr5);
 
-    // // 2. 获取数组中相同的数据---交集操作
-    // const arr3 = [1, 2, 3, 4, 5, 6, 7];
-    // const arr4 = [1, 2, 3, 10, 11];
-    // const result = [...new Set(arr3)].filter(v => new Set(arr4).has(v))
-    // console.log(result)
-
-    // // 3. 获取数组中不同的数据---并集操作
-    // const arr5 = [1, 2, 3, 4, 5];
-    // const arr6 = [1, 2, 3, 6, 7, 8];
-    // const result2 = [...new Set([...arr5, ...arr6])];
-    // console.log(result2);
+    // 3. 获取数组中不同的数据---并集操作
+    // var arr6 = [10, 20, 30, 40];
+    // var arr7 = [10, 20, 50, 60];
+    // var arr8 = [...new Set([...arr6, ...arr7])];
+    // console.log(arr8)
 
 
-    // // 4. 获取数组中差集(我有的你没有,或者你有的我没有)
-    // const arr7 = [1, 2, 3, 4, 5];
-    // const arr8 = [1, 2, 3, 8, 9];
-    // const result3 = [...new Set(arr7)].filter(v => !(new Set(arr8).has(v)));
-    // const result4 = [...new Set(arr8)].filter(v => !(new Set(arr7).has(v)));
-    // console.log(result3)
-    // console.log(result4)
+    // 4. 获取数组中差集(我有的你没有,或者你有的我没有)
+    // var arr1 = [10, 20, 30, 40];
+    // var arr2 = [10, 20, 60, 70];
+    // var arr3 = [...new Set(arr1)].filter(item => !(new Set(arr2).has(item)));
+    // console.log(arr3);
 
+    // var arr5 = [...new Set(arr2)].filter(item => !(new Set(arr1).has(item)));
+    // console.log(arr5);
   </script>
 </body>
 
