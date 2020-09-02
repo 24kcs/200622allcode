@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <!-- <button id="btn">按钮</button>
+  <p id="p1">p标签</p> -->
+  <script type="text/javascript">
+    // 1秒后 控制台输出111, 然后2秒后输出222，然后3秒手输出333
+    // 回调地狱,代码可读性差,错误处理不方便
+ 
+    function one() {
+      setTimeout(() => {
+        console.log('111');
+        iterator.next();
+      }, 1000);
+    }
+    function two() {
+      setTimeout(() => {
+        console.log('222');
+        iterator.next();
+      }, 2000);
+    }
+    function three() {
+      setTimeout(() => {
+        console.log('333');
+        iterator.next()
+      }, 3000);
+    }
+    // 通过生成器函数解决回调地狱的问题()
+    function * gen(){
+      yield one();
+      yield two();
+      yield three();
+      yield '我好开心啊,因为强哥喜欢我,'
+
+    }
+    const iterator = gen();
+    iterator.next();
+
+
+
+
+
+
+
+
+
+
+    // document.getElementById('btn').onclick=function(){
+    //   setTimeout(() => {
+    //     document.getElementById('p1').onclick=function(){
+    //       this.innerHTML='啊啊'
+    //     }
+    //   }, 1000);
+    // }
+
+
+    // setTimeout(() => {
+    //   console.log(111);
+    //   setTimeout(() => {
+    //     console.log(222);
+    //     setTimeout(() => {
+    //       console.log(333);
+    //     }, 3000);
+    //   }, 2000);
+    // }, 1000);
+
+
+    // function f1(){
+    //   function f2(){
+    //     function f3(){
+    //       function f4(){
+
+    //       }
+    //       f4()
+    //     }
+    //     f3()
+    //   }
+    //   f2()
+    // }
+    // f1();
+
+
+
+
+
+  </script>
+</body>
+
+</html>

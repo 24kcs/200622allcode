@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 模拟登陆后才能看到商品数据,才能看到订单数据
+
+    // 获取用户信息数据
+    function getLogin() {
+      setTimeout(() => {
+        // 用户信息
+        const login = '帐号:admin,密码:123';
+        iterator.next(login)
+      }, 1000);
+    }
+    // 获取商品数据的
+    function getProduct() {
+      setTimeout(() => {
+        const product = '奢侈商品(一个牙刷)';
+        iterator.next(product);
+      }, 1000);
+    }
+    // 获取订单数据
+    function getOrder() {
+      setTimeout(() => {
+        const order = '订单编号:110,订单时间:2020年9月2日';
+        iterator.next(order);
+      }, 1000);
+    }
+
+    function* gen() {
+      // 获取用户信息
+      const login = yield getLogin();
+      console.log(login);
+      // 获取商品信息
+      const product = yield getProduct();
+      console.log(product)
+      // 获取订单信息
+      const order =  yield getOrder();
+      console.log(order)
+    }
+    const iterator = gen();
+    iterator.next();
+
+
+
+
+
+  </script>
+</body>
+
+</html>

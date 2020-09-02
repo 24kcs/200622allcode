@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    //  ES6创造了一种新的遍历命令,for..of循环,Iterator接口主要提供for...of消费
+    // 迭代器:就是用来遍历数据的一个接口(能力)
+    // 迭代器无非就是内部返回值一个指针对象,通过指针对象调用next()方法,可以进行数据的遍历的操作
+    
+
+    var arr = [1000,20,30,40];
+    // for-in 遍历数组
+    // for(var key in arr){
+    //   console.log(key); // key ---- 索引
+    // }
+    // console.log('==========强哥友情提示: ^_^! ==========')
+    // // for-of 遍历数组
+    // for(var key of arr){
+    //   console.log(key) // key -----数据(数组的元素)
+    // }
+    // 为什么可以使用for-of进行遍历,内部实现了iterator接口(内部有了iterator方法)
+    // console.log(arr)
+
+    // 获取当前数组中的Symbol.iterator的函数,并且直接调用
+    // 返回的结果是一个对象,指针对象
+    let iterator = arr[Symbol.iterator]();
+    // console.log(iterator)
+    // 移动指针到下一个下标或者索引---移动到下一个值的位置
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+
+
+
+
+
+    // 所有的数组都是Array的实例
+    // 所有的函数都是Function的实例
+
+
+
+
+
+
+
+    // var str = 'abcdefg';
+    // for (var i = 0; i < str.length; i++) {
+    //   console.log(str[i]);
+    // }
+    // for(var key in str){
+    //   console.log(str[key])
+    // }
+
+
+
+  </script>
+</body>
+
+</html>

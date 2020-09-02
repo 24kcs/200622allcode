@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+  // class
+  // 1. 通过class定义类/实现类的继承
+  // 2. 在类中通过constructor定义构造方法
+  // 3. 通过new 来创建类的实例
+
+  // 定义个人类,并实例化对象
+  class Person{
+    // 构造器方法
+    constructor(name,age){
+      this.name=name;
+      this.age= age;
+    }
+    // 添加方法
+    eat(){
+      console.log(`${this.age}岁的${this.name}正在吃东西`)
+    }
+  }
+  const per = new Person('小明',20)
+  per.eat()
+
+  </script>
+</body>
+
+</html>

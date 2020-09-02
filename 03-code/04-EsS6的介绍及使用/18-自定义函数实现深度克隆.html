@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    var obj1 = {
+      name: '小明',
+      age: 20,
+      cars: ['奔驰', '宝马'],
+      dog: {
+        color: '黄色'
+      },
+      eat() {
+        console.log('吃东西');
+      }
+    };
+    function deepClone(data) {
+      // 先获取传入进来的数据是什么类型
+      let container = null;
+      let dataType = getDateType(data);
+      if (dataType === 'Object') {
+        container = {};
+      } else if (dataType === 'Array') {
+        container = [];
+      }
+      for (var key in data) {
+        // 先获取当前的key数据的类型
+        let type = getDateType(data[key]);
+        // 如果当前的type是对象或者数组,那么就继续的调用方法,创建
+        if (type === 'Object' || type === 'Array') {
+          container[key] = deepClone(data[key]);
+        } else {
+          container[key] = data[key]
+        }
+      }
+      return container
+    }
+
+    // 给我数据,返回该数据的类型
+    function getDateType(data) {
+      return Object.prototype.toString.call(data).slice(8, -1);
+    }
+    console.log(getDateType(12));
+    console.log(getDateType('哈哈'));
+    console.log(getDateType([]));
+    console.log(getDateType({}));
+    console.log('===============================');
+
+    var obj2 = deepClone(obj1);
+    obj2.cars[0] = '奥拓';
+    console.log(obj1);
+    console.log(obj2);
+  </script>
+</body>
+
+</html>

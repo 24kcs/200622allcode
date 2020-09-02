@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // ES6 允许给函数形参赋值初始值
+    // 形参可以有默认值,一般默认值靠后(不建议靠前设置默认值)
+    // 与解构赋值结合使用 解构赋值的形式先后顺序不影响
+    function f1(a, b = 20, c = 10) {
+      console.log(a + b + c)
+    }
+    f1(10, 40)
+    function request({ host, port='5000', user, password }) {
+      console.log(host)
+      console.log(port)
+      console.log(user)
+      console.log(password)
+    }
+    request({ host: 'localhost', port: '8080', user: 'admin', password: '123' })
+  </script>
+</body>
+
+</html>

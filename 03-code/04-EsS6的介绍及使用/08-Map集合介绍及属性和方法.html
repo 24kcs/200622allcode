@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    //  Map容器: 无序的key不重复的多个key-value的集合体
+    // 1. Map()
+    // 2. Map(array)
+    // 3. set(key,value) 添加
+    // 4. get(key)
+    // 5. delete(key)
+    // 6. has(key)
+    // 7. clear()
+    // 8. size
+
+    // const map = new Map()
+    const map = new Map()
+    // 键和值可以是任意类型
+    // map.set('name', '强哥')
+    var obj ={};
+    // 键值的方式添加数据
+    map.set(obj, function(){console.log('真好')})
+    // 根据键获取值
+    // console.log(map.get(obj))
+    // 根据键进行删除
+    // map.delete('name')
+    // 根据键进行判断
+    // console.log(map.has('name'))
+    // 清空map
+    // map.clear()
+    // console.log(map.size)
+    // console.log(map)
+    for(var key of map){
+      console.log(key)
+    }
+  </script>
+</body>
+
+</html>

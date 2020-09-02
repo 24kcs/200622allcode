@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 静态成员是构造函数对象的(函数对象上的,直接通过  函数名字 点出来使用的 )
+    // 静态成员不是通过实例对象调用的,而是通过类来调用的
+    // ES5 实现静态成员
+    // function Person(){}
+    // Person.name='person';
+    // Person.eat=function(){
+    //   console.log('吃了')
+    // }
+    // console.dir(Person)
+    // ES6 实现静态成员
+    class Person {
+      constructor() { }
+      static name = 'person'
+      static eat() {
+        console.log('吃了没')
+      }
+    }
+    console.dir(Person);
+
+
+  </script>
+</body>
+
+</html>

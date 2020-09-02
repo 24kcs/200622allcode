@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    // 数组可以通过迭代器进行数据的遍历,原因:内部有Symbol.iterator()方法---有迭代器
+
+    var obj = {
+      name: '强哥',
+      age: 47,
+      cars: ['奔驰', '宝马', '奥迪', '二八杠'],
+      [Symbol.iterator]: function () {
+        let that = this
+        let index = 0;
+        return {
+          next: function () {
+            // 判断,当前的指针对象在移动的时候是否到达了末尾
+            if (index >= that.cars.length) {
+              return {
+                value: 'undefined',
+                done: true
+              }
+            } else {
+              return {
+                value: that.cars[index++],
+                done: false
+              }
+            }
+
+          }
+        }
+      }
+    };
+
+    // 想要通过for-of遍历对象,for-of无法遍历自己定义的对象,原因:内部没有实现迭代器
+    for (var key of obj) {
+      console.log(key)
+    }
+
+  </script>
+</body>
+
+</html>

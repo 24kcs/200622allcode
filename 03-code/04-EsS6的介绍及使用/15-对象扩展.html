@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 判断两个数据是否全等   ===  或者 Object.is()
+    // Object.is() 方法判断两个值是否为同一个值。
+
+    const num1 = 100;
+    const num2 = 100;
+    console.log(num1 === num2);
+    console.log(Object.is(num1, num2));
+    console.log(Object.is(NaN, NaN));
+
+
+    // Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
+    // 合并对象,第一个参数是目标对象,第二个参数是要合并的对象,该方法返回的对象就是目标对象,如果合并的对象中有相同的属性会被覆盖
+
+    const obj1 = {
+      name: '小明',
+      age: 20
+    };
+    const obj2 = {
+      gender: '男',
+      height: '157'
+    };
+    // 
+    Object.assign(obj1, obj2);
+    console.log(obj1);
+
+
+    // 方式1: 直接通过__proto__ 修改原型对象
+
+    var obj3 = {
+      name: '强哥'
+    };
+    var obj4 = {
+      gender: '男'
+    };
+    // obj4是obj3的父级对象
+    // obj3.__proto__ = obj4;
+    // console.log(obj3);
+
+    // 方式2: Object.setPrototypeOf() 方法设置一个指定的对象的原型 到另一个对象
+
+    Object.setPrototypeOf(obj3, obj4);
+    console.log(obj3)
+    // 方式3: Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。
+    const obj5 = Object.create(obj4, {
+      color: {
+        value: '绿色'
+      }
+    });
+    console.log(obj5);
+
+  </script>
+</body>
+
+</html>

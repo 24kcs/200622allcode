@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // [...] 扩展运算符(展开运算符) 能将数组转换为参数序列
+    function f1() {
+      console.log(arguments)
+    }
+    const arr = [10, 20, 30]
+    // 拆包
+    f1(...arr)
+
+
+    // 展开对象
+    const obj1 = {
+      name: '卡卡西',
+      age: 20
+    }
+    const obj2 = {
+      gender: '男',
+      weight: '50kg'
+    }
+    const obj = {
+      ...obj1,
+      ...obj2
+    }
+    console.log(obj)
+
+
+  </script>
+</body>
+
+</html>

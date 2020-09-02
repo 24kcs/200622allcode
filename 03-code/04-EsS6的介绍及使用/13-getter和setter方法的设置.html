@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+<body>
+  <script type="text/javascript">
+  // getter和setter的设置
+  class Person{
+    // 实例对象的属性的 设置和获取 操作
+    get name(){
+      return this.n
+    }
+    set name(val){
+      this.n = val
+    }
+    // 静态属性的设置 和 获取  操作
+    static get color(){
+      return '黄色'
+    }
+    static set color(val){
+      console.log(val)
+    }
+  }
+  const p = new Person()
+  p.name = '小明';
+  console.log(p.name);
+  
+  console.log(Person.color)
+  </script>
+</body>
+</html>

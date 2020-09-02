@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // 4. 通过extends来实现类的继承
+    // 5. 通过super调用父类的构造函数
+    // 6. 重写从父类继承的一般方法
+
+    class Person {
+      constructor(name, color) {
+        this.name = name;
+        this.color = color;
+      }
+      eat() {
+        console.log(`${this.name} 正在吃 ${this.color} 的臭豆腐`);
+      }
+    }
+    class Student extends Person {
+      constructor(name, color, age) {
+        // 继承属性
+        super(name, color);
+        this.age = age
+      }
+      run() {
+        console.log('跑起来');
+      }
+      // 重写父级的方法
+      eat(){
+        console.log('我要吃鸡腿');
+      }
+    }
+    const stu  = new Student('强哥','黄色',20)
+    console.log(stu)
+    stu.eat();
+    stu.run();
+  </script>
+</body>
+
+</html>

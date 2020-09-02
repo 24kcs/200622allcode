@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    function Product(name, price) {
+      this.name = name;
+      this.price = price;
+    }
+    Product.prototype.getDesc = function () {
+      console.log('当前的商品价格为:' + this.price)
+    }
+
+    function Phone(name, price, color, weight) {
+      // 属性的继承
+      Product.call(this, name, price)
+      this.color = color;
+      this.weight = weight;
+    }
+    // 方法的继承
+    Phone.prototype = new Product()
+    Phone.prototype.getColor = function () {
+      console.log(`当前商品的颜色为:${this.color}`);
+    }
+    const phone = new Phone('小米', 2300, '绿色', '0.2kg')
+    console.log(phone);
+    phone.getDesc()
+    phone.getColor()
+  </script>
+</body>
+
+</html>
